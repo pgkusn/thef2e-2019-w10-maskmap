@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <Menu :email="email"></Menu>
+        <Menu></Menu>
         <Map></Map>
     </div>
 </template>
@@ -17,13 +17,6 @@ export default {
     },
     async fetch({ store }) {
         await store.dispatch('getCity');
-    },
-    async asyncData({ $axios }) {
-        let { data } = await $axios({
-            method: 'get',
-            url: 'https://randomuser.me/api/',
-        });
-        return { email: data.results[0].email };
     },
 };
 </script>
