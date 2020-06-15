@@ -6,6 +6,7 @@
         <select v-model="currentArea">
             <option v-for="area in areas" :key="area.AreaName">{{ area.AreaName }}</option>
         </select>
+        <p>{{ email }}</p>
     </div>
 </template>
 
@@ -14,6 +15,7 @@ import { mapState } from 'vuex';
 
 export default {
     name: 'Menu',
+    props: ['email'],
     data() {
         return {
             currentCity: '台北市',
