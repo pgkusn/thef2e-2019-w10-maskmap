@@ -16,7 +16,7 @@ export default {
         Map,
     },
     async fetch({ store }) {
-        await store.dispatch('getCity');
+        await store.dispatch('getData');
     },
 };
 </script>

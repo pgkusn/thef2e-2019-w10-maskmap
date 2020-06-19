@@ -5,19 +5,21 @@
     "author": "",
     "private": true,
     "scripts": {
-        "dev": "nuxt",
-        "build": "nuxt build",
-        "start": "nuxt start",
+        "dev": "cross-env NODE_ENV=dev nuxt",
+        "prod": "cross-env NODE_ENV=prod nuxt",
+        "build": "cross-env NODE_ENV=prod nuxt build",
+        "start": "cross-env NODE_ENV=prod nuxt start",
         "generate": "nuxt generate",
         "heroku-postbuild": "npm run build"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.11.0",
-        "cross-env": "^5.2.0",
         "leaflet": "^1.6.0",
         "nuxt": "^2.4.0"
     },
     "devDependencies": {
+        "@nuxtjs/dotenv": "^1.4.1",
+        "cross-env": "^7.0.2",
         "node-sass": "^4.14.1",
         "nodemon": "^1.18.9",
         "sass-loader": "^8.0.2"

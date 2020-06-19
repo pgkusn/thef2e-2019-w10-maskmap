@@ -6,36 +6,45 @@
         <select v-model="currentArea">
             <option v-for="area in areas" :key="area.AreaName">{{ area.AreaName }}</option>
         </select>
+        <ul>
+            <li v-for="mask in currentMasks" :key="mask.properties.id">
+                <p>{{ mask.properties.name }}</p>
+            </li>
+        </ul>
     </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
     name: 'Menu',
-    data() {
-        return {
-            currentCity: '台北市',
-        };
-    },
     computed: {
         ...mapState(['cities']),
+        ...mapGetters(['currentMasks']),
         areas() {
             return this.cities.filter(city => city.CityName === this.currentCity)[0].AreaList;
+        },
+        currentCity: {
+            get() {
+                return this.$store.state.currentCity;
+            },
+            set(value) {
+                this.$store.commit('setCurrentCity', value);
+            },
         },
         currentArea: {
             get() {
                 return this.$store.state.currentArea;
             },
             set(value) {
-                this.$store.commit('setArea', value);
+                this.$store.commit('setCurrentArea', value);
             },
         },
     },
     watch: {
         currentCity(value) {
-            this.$store.commit('setArea', this.areas[0].AreaName);
+            this.$store.commit('setCurrentArea', this.areas[0].AreaName);
         },
     },
 };

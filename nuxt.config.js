@@ -58,4 +58,8 @@ module.exports = {
         extend(config, ctx) {},
         extractCSS: true,
     },
+    buildModules: [
+        ['@nuxtjs/dotenv'], // 預設 .env 使用
+        ['@nuxtjs/dotenv', { filename: '.env.' + process.env.NODE_ENV }],
+    ],
 };
