@@ -129,7 +129,7 @@ export default {
     }
     &__top {
         padding: 32px 24px 0;
-        background-color: #10203033;
+        background-color: #f6f6f6;
         &--select {
             position: relative;
             + .menu__top--select {
@@ -154,6 +154,7 @@ export default {
                 height: 48px;
                 outline: none;
                 border: 1px solid #e2e2e2;
+                border-radius: 4px;
                 font-size: 1rem;
                 appearance: none;
             }
@@ -172,10 +173,8 @@ export default {
         > a {
             display: block;
             padding: 24px;
+            border-top: 1px solid #e2e2e2;
             color: #000;
-            + a {
-                border-top: 1px solid #e2e2e2;
-            }
         }
         &--name {
             margin-bottom: 8px;
