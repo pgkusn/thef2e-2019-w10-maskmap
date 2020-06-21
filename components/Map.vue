@@ -173,7 +173,7 @@ export default {
 /deep/ .leaflet-popup-close-button {
     display: none;
 }
-/ddep/ .leaflet-div-icon {
+/deep/ .leaflet-div-icon {
     border: none;
     background-color: transparent;
 }
