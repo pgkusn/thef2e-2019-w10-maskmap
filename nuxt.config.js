@@ -16,6 +16,11 @@ module.exports = {
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
             { rel: 'stylesheet', href: 'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css' },
+            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
+            {
+                rel: 'stylesheet',
+                href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap',
+            },
         ],
     },
 
@@ -27,7 +32,7 @@ module.exports = {
     /*
      ** Global CSS
      */
-    css: ['@/assets/scss/reset.scss'],
+    css: ['@/assets/sass/reset.scss'],
 
     /*
      ** Plugins to load before mounting the App
@@ -56,7 +61,6 @@ module.exports = {
          ** You can extend webpack config here
          */
         extend(config, ctx) {},
-        extractCSS: true,
     },
     buildModules: [
         ['@nuxtjs/dotenv'], // 預設 .env 使用

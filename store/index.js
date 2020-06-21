@@ -2,25 +2,11 @@ import API from '~/api.js';
 
 export const state = () => ({
     cities: [],
+    masks: [],
     currentCity: '',
     currentArea: '',
-    masks: [],
+    currentLatLng: [],
 });
-
-export const mutations = {
-    setCities(state, payload) {
-        state.cities = payload;
-    },
-    setCurrentCity(state, payload) {
-        state.currentCity = payload;
-    },
-    setCurrentArea(state, payload) {
-        state.currentArea = payload;
-    },
-    setMasks(state, payload) {
-        state.masks = payload;
-    },
-};
 
 export const getters = {
     currentMasks: state =>
@@ -28,6 +14,25 @@ export const getters = {
             let currentCity = state.currentCity === '台北市' ? '臺北市' : state.currentCity;
             return item.properties.county === currentCity && item.properties.town === state.currentArea;
         }),
+};
+
+export const mutations = {
+    setCities(state, payload) {
+        state.cities = payload;
+    },
+    setMasks(state, payload) {
+        state.masks = payload;
+    },
+    setCurrentCity(state, payload) {
+        state.currentCity = payload;
+    },
+    setCurrentArea(state, payload) {
+        state.currentArea = payload;
+    },
+    setCurrentLatLng(state, payload) {
+        let [currentLng, currentLat] = payload;
+        state.currentLatLng = [currentLat, currentLng];
+    },
 };
 
 export const actions = {

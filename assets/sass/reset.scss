@@ -50,19 +50,30 @@ table {
 /* ========================================================================== */
 /* custom */
 /* ========================================================================== */
- *, *:before, *:after {
+*, *:before, *:after {
 	box-sizing: border-box;
+}
+body, input, textarea, select, button {
+	font-family: 'Noto Sans TC', sans-serif;
 }
 body {
 	word-wrap: break-word;
-}
-a {
-	text-decoration: none;
 }
 img {
 	max-width: 100%;
 	vertical-align: middle;
 }
-body, input, textarea, select, button {
-	font-family: -apple-system, Roboto, Helvetica, Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
+a {
+	text-decoration: none;
+}
+button {
+    padding: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    appearance: none;
 }

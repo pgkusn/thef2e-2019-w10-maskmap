@@ -24,5 +24,6 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
     display: flex;
+    height: 100vh;
 }
 </style>

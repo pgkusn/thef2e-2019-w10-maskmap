@@ -1,4 +1,5 @@
 {
     "csscomb.formatOnSave": true,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "csscomb.ignoreFilesOnSave": ["**/**/reset.scss"]
 }
